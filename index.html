@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dreipunktoans – Offizielle Website</title>
+  <meta name="description" content="Offizielle Website von dreipunktoans: Termine, Fotos, Musik und Kontakt für Booking-Anfragen.">
+
+  <!-- Open Graph: sorgt für eine schöne Vorschau, wenn der Link z. B. bei Instagram oder WhatsApp geteilt wird.
+       Hinweis: og:image funktioniert zuverlässiger mit einer absoluten URL. Sobald ihr eure GitHub-Pages-Adresse
+       kennt, ersetzt "assets/og-image.jpg" z. B. durch "https://username.github.io/repo-name/assets/og-image.jpg" -->
+  <meta property="og:title" content="dreipunktoans – Offizielle Website">
+  <meta property="og:description" content="Termine, Fotos und Kontakt von dreipunktoans.">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Eigenes Icon unter assets/favicon.ico ablegen (optional) -->
+  <link rel="icon" href="assets/favicon.ico">
+
+  <!-- Google Fonts (kostenlos): Fraunces für große Überschriften, Archivo für Fließtext, Space Mono für Termine/Labels -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;900&family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+
+  <!-- Für Tastatur-Nutzer: wird erst sichtbar, wenn man per Tab reinspringt -->
+  <a href="#main" class="skip-link">Zum Inhalt springen</a>
+
+  <!-- ============ HEADER / NAVIGATION ============ -->
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar container">
+      <a href="#home" class="logo">
+        <!-- Eigenes Logo: Datei assets/logo.png anlegen (am besten transparentes PNG oder SVG).
+             Falls die Datei fehlt, wird sie automatisch ausgeblendet und nur der Schriftzug bleibt sichtbar. -->
+        <img src="assets/logo.png" alt="dreipunktoans Logo" class="logo-img" onerror="this.style.display='none'">
+        <span class="logo-text">dreipunktoans</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link">Start</a></li>
+        <li><a href="#about" class="nav-link">Über uns</a></li>
+        <li><a href="#termine" class="nav-link">Termine</a></li>
+        <!-- <li><a href="#video" class="nav-link">Live</a></li> -->
+        <li><a href="#galerie" class="nav-link">Galerie</a></li>
+        <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO / STARTBEREICH ============ -->
+    <section id="home" class="hero">
+      <!-- Dezentes Logo-Wasserzeichen im Hintergrund, leicht gedreht. Nutzt dieselbe Datei wie das Header-Logo. -->
+      <div class="hero-watermark" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1 class="hero-title">dreipunktoans</h1>
+          <p class="hero-tagline">Drei Akkorde, ein Proberaum, zu viele Ideen.</p>
+          <a href="#termine" class="btn btn-primary">Termine ansehen</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ÜBER UNS ============ -->
+    <section id="about" class="about">
+      <div class="container about-grid">
+        <div class="img-frame about-image">
+          <!-- Gruppenfoto: assets/bandfoto.jpg durch euer eigenes Foto ersetzen -->
+          <img src="assets/bandfoto.jpg" alt="Gruppenfoto von dreipunktoans" loading="lazy">
+        </div>
+        <div class="about-text">
+          <h2>Über uns</h2>
+          <!-- Bio: kompletten Absatz durch euren eigenen Text ersetzen -->
+          <p>
+            Hallo wir sind dreipunktoans! Ein kleiner, aber feiner Bläsertrupp der Spaß am gemeinsamen musizieren hat. 
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TERMINE ============ -->
+    <section id="termine" class="termine">
+      <div class="container">
+        <h2>Termine &amp; Auftritte</h2>
+
+        <div class="termine-grid">
+          <!--
+            Ein Termin = ein <article class="termin-card">.
+            Neuen Termin hinzufügen: diesen Block kopieren und Werte anpassen.
+            Termin entfernen: den kompletten <article>-Block löschen.
+          -->
+            <!--
+              <article class="termin-card">
+                <img src="assets/termin-1.jpg" alt="Foto zu BrassMut" class="termin-foto" onerror="this.style.display='none'">
+
+                <div class="termin-details">
+                  <div class="termin-date">
+                    <span class="day">23</span>
+                    <span class="month">Sep</span>
+                    <span class="year">2026</span>
+                  </div>
+                  <div class="termin-info">
+                    <p class="termin-ort">Waltherhaus, Bozen</p>
+                    <a href="https://www.brassmut.com/" class="termin-link" target="_blank" rel="noopener noreferrer">Zur Website</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="termin-card">
+                <img src="assets/termin-1.jpg" alt="Foto zu BrassMut" class="termin-foto" onerror="this.style.display='none'">
+
+                <div class="termin-details">
+                  <div class="termin-date">
+                    <span class="day">24</span>
+                    <span class="month">Sep</span>
+                    <span class="year">2026</span>
+                  </div>
+                  <div class="termin-info">
+                    <p class="termin-ort">Waltherhaus, Bozen</p>
+                    <a href="https://www.brassmut.com/" class="termin-link" target="_blank" rel="noopener noreferrer">Zur Website</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="termin-card">
+                <img src="assets/termin-1.jpg" alt="Foto zu BrassMut" class="termin-foto" onerror="this.style.display='none'">
+
+                <div class="termin-details">
+                  <div class="termin-date">
+                    <span class="day">25</span>
+                    <span class="month">Sep</span>
+                  <span class="year">2026</span></div>
+                  <div class="termin-info">
+                    <p class="termin-ort">Waltherhaus, Bozen</p>
+                    <a href="https://www.brassmut.com/" class="termin-link" target="_blank" rel="noopener noreferrer">Zur Website</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="termin-card">
+                <img src="assets/termin-1.jpg" alt="Foto zu BrassMut" class="termin-foto" onerror="this.style.display='none'">
+
+                <div class="termin-details">
+                  <div class="termin-date">
+                    <span class="day">27</span>
+                    <span class="month">Sep</span>
+                    <span class="year">2026</span>
+                  </div>
+                  <div class="termin-info">
+                    <p class="termin-ort">Waltherhaus, Bozen</p>
+                    <a href="https://www.brassmut.com/" class="termin-link" target="_blank" rel="noopener noreferrer">Zur Website</a>
+                  </div>
+                </div>
+              </article>
+            -->
+          
+        </div>
+
+        <!--
+          Platzhalter für "aktuell keine Termine": standardmäßig ausgeblendet (hidden).
+          Umschalten: die zwei .termin-card-Blöcke oben löschen und bei diesem <p> das
+          Attribut hidden entfernen.
+        -->
+        <p class="no-termine">
+          Aktuell sind keine neuen Termine geplant – schaut bald wieder vorbei oder
+          folgt uns auf Social Media, um nichts zu verpassen.
+        </p>
+      </div>
+    </section>
+    
+    <!-- ============ VIDEO BEREICH ============
+    <section id="video" class="section">
+      <div class="container">
+        
+        <h2>Live in Action</h2>
+        
+        <div class="video-wrapper">
+          <video controls poster="assets/video-vorschau.jpg">
+            <source src="assets/live-gig.mp4" type="video/mp4">
+            Dein Browser unterstützt dieses Video leider nicht.
+          </video>
+        </div>
+
+      </div>
+    </section>
+  -->
+
+    <!-- ============ GALERIE / MEDIATHEK ============ -->
+    <section id="galerie" class="galerie">
+      <div class="container">
+        <h2>Galerie</h2>
+        <div class="galerie-grid">
+          <!-- Jede Datei assets/galerie-1.jpg bis galerie-6.jpg durch eigene Fotos ersetzen -->
+          <button class="galerie-item img-frame" type="button">
+            <img src="assets/galerie-1.jpg" alt="dreipunktoans live auf der Bühne" loading="lazy">
+          </button>
+          <button class="galerie-item img-frame" type="button">
+            <img src="assets/galerie-2.jpg" alt="dreipunktoans im Proberaum" loading="lazy">
+          </button>
+          <button class="galerie-item img-frame" type="button">
+            <img src="assets/galerie-3.jpg" alt="Publikum bei einem Konzert von dreipunktoans" loading="lazy">
+          </button>
+          <button class="galerie-item img-frame" type="button">
+            <img src="assets/galerie-4.jpg" alt="Bandmitglied von dreipunktoans an der Gitarre" loading="lazy">
+          </button>
+          <button class="galerie-item img-frame" type="button">
+            <img src="assets/galerie-5.jpg" alt="dreipunktoans backstage" loading="lazy">
+          </button>
+          <button class="galerie-item img-frame" type="button">
+            <img src="assets/galerie-6.jpg" alt="dreipunktoans bei einem Soundcheck" loading="lazy">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KONTAKT & BOOKING ============ -->
+    <section id="kontakt" class="kontakt">
+      <div class="container kontakt-grid">
+        <div class="kontakt-info">
+          <h2>Kontakt &amp; Booking</h2>
+          <p>Ihr wollt uns für einen Termin buchen oder habt eine Frage? Schreibt uns kurz – wir melden uns zurück.</p>
+
+          <!-- Gmail-Adresse: gut sichtbar als Text UND als klickbarer mailto-Link -->
+          <a href="mailto:dreipunktoans@gmail.com" class="kontakt-email">dreipunktoans@gmail.com</a>
+
+          <!-- ===== SOCIAL MEDIA LEISTE — kann komplett entfernt werden (dieses ganze div) =====
+               Einzelnes Netzwerk entfernen: nur das jeweilige <a> löschen. -->
+          <div class="social-links">
+            <!-- Instagram -->
+            <a href="https://instagram.com/dreipunktoans" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="dreipunktoans auf Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1"/></svg>
+              <span>Instagram</span>
+            </a>
+            <!-- Platzhalter: Facebook – Link eintragen oder diesen Block löschen -->
+            <!-- <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="dreipunktoans auf Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 3h-2a5 5 0 0 0-5 5v3H6v4h2v6h4v-6h3l1-4h-4V8a1 1 0 0 1 1-1h3z"/></svg>
+              <span>Facebook</span>
+            </a> -->
+            <!-- Platzhalter: YouTube – Link eintragen oder diesen Block löschen -->
+            <!-- <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="dreipunktoans auf YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor" stroke="none"/></svg>
+              <span>YouTube</span>
+            </a> -->
+          </div>
+          <!-- ===== ENDE SOCIAL MEDIA LEISTE ===== -->
+        </div>
+
+        <!--
+          Kontaktformular, vorbereitet für Web3Forms (kein Account nötig, nur Access Key).
+          Genaue Einrichtung steht in der Chat-Antwort. Umstieg auf Formspree: siehe Erklärung dort.
+        -->
+        <form class="kontakt-form" id="kontaktForm" action="https://api.web3forms.com/submit" method="POST">
+          <!-- Access Key von web3forms.com hier eintragen -->
+          <input type="hidden" name="access_key" value="24a33dd1-2f3a-4609-8857-c010b711b89c">
+          <input type="hidden" name="subject" value="Neue Nachricht über die dreipunktoans-Website">
+          <input type="hidden" name="System-Erinnerung" value="WICHTIG: Falls dieser Auftritt fixiert wird, vergesst nicht, das Datum in der index.html (Termin-Kachel) und in der script.js (Kalender-Punkt) einzutragen!">
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="booking-date">Termin für den Auftritt</label>
+            <input type="text" id="booking-date" name="Wunschtermin" placeholder="Datum auswählen...">
+          </div>
+          <div class="form-group">
+            <label for="message">Nachricht</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <!-- Spam-Schutz: für Menschen unsichtbares Feld. Wird per JS geprüft, siehe script.js -->
+          <input type="text" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <button type="submit" class="btn btn-primary">Nachricht senden</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <p>&copy; 2026 dreipunktoans. Alle Rechte vorbehalten.</p>
+    <p class="footer-note">Diese Website ist werbefrei und verzichtet auf Tracking.</p>
+  </footer>
+
+  <!-- Lightbox für die Galerie (Inhalt wird per JS gesetzt) -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Bild schließen">&times;</button>
+    <img src="" alt="" id="lightboxImg">
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://npmcdn.com/flatpickr/dist/l10n/de.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
